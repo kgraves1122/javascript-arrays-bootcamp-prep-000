@@ -29,34 +29,42 @@ var chocolateBars = [
   'skitles'
   ]
   
-function addElementToBeginningOfArray (x, y) {
-  var a = x.unshift(y);
-  return a;
+function addElementToBeginningOfArray (array, element) {
+  return [ element, ...array];
   }
 
-function destructivelyAddElementToBeginningOfArray (array1, element1) {
-  array1 = array1.unshift(element1);
-  return array1;
+function destructivelyAddElementToBeginningOfArray (array, element) {
+  array.unshift(element);
+  return array;
   } 
   
-  function addElementToEndOfArray (endA, elA) {
-    var newA = endA.push(elA);
-    return newA;
+  function addElementToEndOfArray (array, element) {
+    return [...array, element];
   }
   
-  function destructivelyAddElementToEndOfArray (endB, elB) {
-    endB = endB.push(elB);
-    return endB;
+  function destructivelyAddElementToEndOfArray (array, element) {
+    array.push(element);
+    return array;
   }
   
   function accessElementInArray (ar, num) {
     return ar[num];
   }
   
-  function destructivelyRemoveElementFromBeginningOfArray (arry) {
-    arry = arry.shift();
-    return arry;
+  function destructivelyRemoveElementFromBeginningOfArray (array) {
+    array.shift();
+    return array;
   }
   
-  
+  function removeElementFromBeginningOfArray (arrry) {
+    return arrry.slice(1);
+  }
 
+function destructivelyRemoveElementFromEndOfArray (array) {
+  array.pop();
+  return array;
+}
+
+function removeElementFromEndOfArray (only) {
+  return only.slice(0, only.length - 1);
+}
